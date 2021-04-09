@@ -1,0 +1,94 @@
+@font-face {
+  font-family: Montserrat;
+  src: url(fonts/Montserrat-Regular.ttf);
+}
+
+body {
+  background: url("../img/green_cat_wallpaper.jpg");
+  background-size: cover;
+  font-family: 'Montserrat';
+  overflow: hidden;
+  color: white
+}
+
+body .container-fluid {
+  margin-top: 45px;
+  position: relative;
+  left: 100px
+}
+
+.main-title {
+  font-size: 75px;
+  color: white;
+  text-transform: unset
+}
+
+#qr {
+  cursor: pointer
+}
+
+.relative {
+  position: relative !important
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.question-icon-balance {
+  width: 30px;
+  right: 0;
+  background: #40464a;
+  padding: 6px;
+  border-radius: 100px;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 10px
+}
+
+.inline {
+  display: inline-block !important
+}
+
+.question-icon {
+  position: absolute;
+  width: 30px;
+  bottom: 15px;
+  right: 0;
+  background: #40464a;
+  padding: 8px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+
+#exampleModal {
+  color: black
+}
+
+.template {
+  display: none;
+}
+
+.nopadding {
+  padding: 0 !important
+}
+
+.approved-list {
+  position: relative;
+  opacity: 0.8;
+  padding: 30px;
+  border-radius: 8px;
+  background: rgba(23, 60, 90, 0.45);
+  backdrop-filter: blur(5px);
+  font-weight: 600;
+  max-height: 620px;
+  overflow-y: auto;
+}
+
+.approved-list .single-message {
+  padding: 10px;
+  background: #4b4f53;
+  box-shadow: 0px 0px 8px 0px #9c9c9c;
+  margin: 27px;
+}
