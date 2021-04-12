@@ -4,7 +4,7 @@ refreshContent = () => {
       'Content-Type': "application/json"
     },
     type: 'GET',
-    url: window.webappname + '/resources/javaee8/campaign_view/msg/' + $('#walletAddress').html() + '/10',
+    url: window.messagesUrl,
     contentType: "application/json",
     success: function (dataRes) {
       let approvedList = JSON.parse(dataRes['postReturn']);
@@ -38,7 +38,7 @@ getAddressBalance = (walletAddress) => {
       'Content-Type': "application/json"
     },
     type: 'POST',
-    url: window.webappname + '/resources/javaee8/getWalletBalances',
+    url: window.balanceUrl,
     contentType: "application/json",
     dataType: "json",
     data: JSON.stringify(dataForBalance),
@@ -54,11 +54,16 @@ getAddressBalance = (walletAddress) => {
 
 
 $(document).ready(function () {
+  window.webappname = 'https://testsite.takamaka.org:10443';
+
+  window.qrUrl = window.webappname + '/qr/' + $('#walletAddress').html() + '/400/Dona%20ai%20gatti%20verdi';
+  window.messagesUrl = window.webappname + '/msg/' + $('#walletAddress').html() + '/10';
+  window.balanceUrl = window.webappname + '/balance/';
   document.querySelectorAll('pre code').forEach((block) => {
     hljs.highlightBlock(block);
   });
   var settings = {
-    "url": window.webappname + '/resources/javaee8/campaign_view/qr/'+$('#walletAddress').html()+'400/Dona!!',
+    "url": window.qrUrl,
     "method": "GET",
     "timeout": 0,
   };
@@ -75,12 +80,14 @@ $(document).ready(function () {
   }, 1000);
 
   $.ajax(settings).done(function (response) {
+    console.log(response);console.log(settings);
+
     $('#qr').attr('src', 'data:image/jpeg;base64,' + response)
   });
 
   $('#qr').on('click', function () {
     $('#exampleModal').find('code').html('var settings = {\n' +
-      '  "url": "http://localhost:8080/walletwebversion/resources/javaee8/campaign_view/getqr/sX2bMNg-xPu5aI6A19KtaWjsj0GDjDPMmvFGuhzb4tI./400/Dona!!",\n' +
+      '  "url": "http://localhost:8080/walletwebversion/resources/javaee8/campaign_view/getqr/sX2bMNg-xPu5aI6A19KtaWjsj0GDjDPMmvFGuhzb4tI./400/Dona",\n' +
       '  "method": "GET",\n' +
       '  "timeout": 0,\n' +
       '};\n' +
@@ -151,7 +158,8 @@ $(document).ready(function () {
     $('#exampleModal').modal();
   });
 
-  window.webappname = 'https://testsite.takamaka.org:10443';
+  
+  console.log([window.qrUrl, window.messagesUrl, window.balanceUrl]);	
 
   refreshContent();
   getAddressBalance($('#walletAddress').html());
