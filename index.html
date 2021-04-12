@@ -41,10 +41,10 @@
   <div class="row single-message managed-message">
     <div class="col-md-9 address-area nopadding text-left">
       <span>{TRX_HASH}</span>
+      <p class="message-content">{TRX_MSG}</p>
     </div>
     <div class="col-md-3 message-area text-left nopadding">
       <p class="amount">{TRX_AMOUNT} TKR</p>
-      <p class="message-content">{TRX_MSG}</p>
     </div>
   </div>
 </div>
@@ -79,26 +79,29 @@
 </div>
 
 <body>
-<div class="container-fluid">
+<div class="container">
   <div class="row">
-    <div class="col-md-7 nopadding">
-      <img id="question-icon" class="question-icon" src="img/question.png">
+    <div class="col-md-12 nopadding">
       <h1 class="main-title"><img src="img/logo-small.png" alt="">Sostieni i gatti verdi!</h1>
       <h4 id="walletAddress">sX2bMNg-xPu5aI6A19KtaWjsj0GDjDPMmvFGuhzb4tI.</h4>
-      <h5 id="balance" class="inline">Totale TKR donati: <span class="font-weight-bolder pointer"></span></h5><img id="balance-question" class="question-icon-balance" src="img/question.png">
+      <h5 id="balance" class="inline">Totale TKR donati: <span class="font-weight-bolder pointer"></span></h5><img
+      id="balance-question" class="question-icon-balance" src="img/question.png">
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-2 nopadding">
+    <div class="col-md-3 qr-container nopadding text-center">
       <img id="qr" src="" alt="">
       <br><br>
       <div id="time" data-time="10"></div>
     </div>
+    <div class="relative col-md-9">
+      <img id="question-icon" class="question-icon" src="img/question.png">
+      <div class="col-md-12 approved-list nopadding">
 
-    <div class="col-md-5 approved-list nopadding">
-
+      </div>
     </div>
+
   </div>
 
 </div>

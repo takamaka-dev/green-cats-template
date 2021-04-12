@@ -156,9 +156,9 @@ $(document).ready(function () {
   refreshContent();
   getAddressBalance($('#walletAddress').html());
 
-  setInterval(function () {
+  /*setInterval(function () {
     refreshContent();
     getAddressBalance($('#walletAddress').html());
 
-  }, 10000);
+  }, 10000);*/
 })

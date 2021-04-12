@@ -7,8 +7,9 @@ body {
   background: url("../img/green_cat_wallpaper.jpg");
   background-size: cover;
   font-family: 'Montserrat';
-  overflow: hidden;
-  color: white
+  overflow-x: hidden;
+  color: white;
+  margin: 20px
 }
 
 body .container-fluid {
@@ -53,12 +54,35 @@ body .container-fluid {
 .question-icon {
   position: absolute;
   width: 30px;
-  bottom: 15px;
-  right: 0;
+  /* bottom: 15px; */
+  /* right: 0; */
   background: #40464a;
   padding: 8px;
   border-radius: 100px;
   cursor: pointer;
+  top: -36px;
+  right: 0;
+}
+
+.address-area, #walletAddress {
+  word-break: break-word
+}
+
+@media screen and (width: 1024px) and (height: 1366px) {
+  .approved-list {
+    max-height: 1050px !important;
+  }
+}
+
+@media screen and (width: 768px) {
+  .qr-container {
+    width: 240px;
+    max-width: 240px;
+  }
+
+  .question-icon {
+    bottom: -285px;
+  }
 }
 
 
