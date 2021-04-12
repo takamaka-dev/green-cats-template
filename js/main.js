@@ -4,7 +4,7 @@ refreshContent = () => {
       'Content-Type': "application/json"
     },
     type: 'GET',
-    url: window.webappname + '/resources/javaee8/campaign_view/getapprovedmsg/' + $('#walletAddress').html() + '/10',
+    url: window.webappname + '/resources/javaee8/campaign_view/msg/' + $('#walletAddress').html() + '/10',
     contentType: "application/json",
     success: function (dataRes) {
       let approvedList = JSON.parse(dataRes['postReturn']);
@@ -58,7 +58,7 @@ $(document).ready(function () {
     hljs.highlightBlock(block);
   });
   var settings = {
-    "url": "http://localhost:8080/walletwebversion/resources/javaee8/campaign_view/getqr/sX2bMNg-xPu5aI6A19KtaWjsj0GDjDPMmvFGuhzb4tI./400/Dona!!",
+    "url": window.webappname + '/resources/javaee8/campaign_view/qr/'+$('#walletAddress').html()+'400/Dona!!',
     "method": "GET",
     "timeout": 0,
   };
@@ -151,14 +151,14 @@ $(document).ready(function () {
     $('#exampleModal').modal();
   });
 
-  window.webappname = 'http://localhost:8080/walletwebversion';
+  window.webappname = 'https://testsite.takamaka.org:10443';
 
   refreshContent();
   getAddressBalance($('#walletAddress').html());
 
-  /*setInterval(function () {
+  setInterval(function () {
     refreshContent();
     getAddressBalance($('#walletAddress').html());
 
-  }, 10000);*/
+  }, 10000);
 })
